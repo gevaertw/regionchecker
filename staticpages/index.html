@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Resources Dashboard - Home</title>
+    <link rel="stylesheet" href="azure_unified_styles.css">
+    <style>
+        /* Additional styles for the home page */
+        .hero-section {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #0078d4 0%, #40e0d0 100%);
+            color: white;
+            margin: -20px -20px 40px -20px;
+            border-radius: 0 0 12px 12px;
+        }
+        
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            font-weight: 400;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin: 40px 0;
+        }
+        
+        .feature-card {
+            background: #ffffff;
+            border: 1px solid #e1e1e1;
+            border-radius: 8px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 16px;
+            display: block;
+        }
+        
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #0078d4;
+            margin-bottom: 12px;
+        }
+        
+        .feature-description {
+            color: #605e5c;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+        
+        .feature-stats {
+            font-size: 0.875rem;
+            color: #107c10;
+            font-weight: 500;
+        }
+        
+        .info-section {
+            background: #f8f9fa;
+            border: 1px solid #e1e1e1;
+            border-radius: 8px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+        
+        .info-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #323130;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .info-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .info-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #e1e1e1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .info-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .info-label {
+            font-weight: 500;
+            color: #323130;
+        }
+        
+        .info-value {
+            color: #605e5c;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            
+            .feature-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="nav-brand-link">
+                    <span class="nav-brand-text">Azure Resources Dashboard</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active" data-page="home">
+                        <span class="nav-icon">🏠</span>
+                        <span class="nav-text">Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="azure_resource_providers.html" class="nav-link" data-page="providers">
+                        <span class="nav-icon">🏢</span>
+                        <span class="nav-text">Resource Providers</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="azure_vm_skus.html" class="nav-link" data-page="vms">
+                        <span class="nav-icon">🖥️</span>
+                        <span class="nav-text">VM SKUs</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="hero-section">
+            <h1 class="hero-title">Azure Resources Dashboard</h1>
+            <p class="hero-subtitle">
+                Comprehensive overview of Azure resource providers and virtual machine SKUs 
+                with real-time availability information for your selected region.
+            </p>
+        </div>
+        
+        <div class="features-grid">
+            <a href="azure_resource_providers.html" class="feature-card">
+                <span class="feature-icon">🏢</span>
+                <h2 class="feature-title">Resource Providers</h2>
+                <p class="feature-description">
+                    Explore all Azure resource providers and their resource types. 
+                    Filter by availability in your target region and discover what services are available.
+                </p>
+                <div class="feature-stats" id="providers-stats">
+                    Loading provider statistics...
+                </div>
+            </a>
+            
+            <a href="azure_vm_skus.html" class="feature-card">
+                <span class="feature-icon">🖥️</span>
+                <h2 class="feature-title">Virtual Machine SKUs</h2>
+                <p class="feature-description">
+                    Browse available VM SKUs with detailed specifications including vCPUs, memory, 
+                    and capabilities. Find the perfect VM size for your workload.
+                </p>
+                <div class="feature-stats" id="vm-stats">
+                    Loading VM statistics...
+                </div>
+            </a>
+        </div>
+        
+        <div class="info-section">
+            <h3 class="info-title">
+                <span>📊</span>
+                Dashboard Information
+            </h3>
+            <ul class="info-list" id="dashboard-info">
+                <li>
+                    <span class="info-label">Target Region</span>
+                    <span class="info-value" id="target-region">Loading...</span>
+                </li>
+                <li>
+                    <span class="info-label">Last Updated</span>
+                    <span class="info-value" id="last-updated">Loading...</span>
+                </li>
+                <li>
+                    <span class="info-label">Data Source</span>
+                    <span class="info-value">Azure Management APIs</span>
+                </li>
+                <li>
+                    <span class="info-label">Update Frequency</span>
+                    <span class="info-value">On-demand via scripts</span>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="info-section">
+            <h3 class="info-title">
+                <span>🔍</span>
+                Features
+            </h3>
+            <ul class="info-list">
+                <li>
+                    <span class="info-label">Search & Filter</span>
+                    <span class="info-value">Real-time filtering across all data</span>
+                </li>
+                <li>
+                    <span class="info-label">Availability Status</span>
+                    <span class="info-value">Region-specific availability information</span>
+                </li>
+                <li>
+                    <span class="info-label">Responsive Design</span>
+                    <span class="info-value">Optimized for desktop and mobile</span>
+                </li>
+                <li>
+                    <span class="info-label">Export Ready</span>
+                    <span class="info-value">Print-friendly layouts</span>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="footer">
+            Generated by Azure Resource Dashboard | Microsoft Learn Style
+        </div>
+    </div>
+
+    <script>
+        // Load and display statistics from the JSON files
+        async function loadStatistics() {
+            try {
+                // Load resource providers data
+                const providersResponse = await fetch('azure_resource_providers.json');
+                if (providersResponse.ok) {
+                    const providersData = await providersResponse.json();
+                    const region = providersData.region_checked || 'Unknown';
+                    const generated = providersData.generated?.date_time || 'Unknown';
+                    const summary = providersData.summary || {};
+                    
+                    document.getElementById('target-region').textContent = region;
+                    document.getElementById('last-updated').textContent = generated;
+                    
+                    const providersStats = `${summary.total_providers || 0} total providers, ${summary.available_in_region || 0} available in ${region}`;
+                    document.getElementById('providers-stats').textContent = providersStats;
+                }
+                
+                // Load VM SKUs data
+                const vmResponse = await fetch('azure_vm_skus.json');
+                if (vmResponse.ok) {
+                    const vmData = await vmResponse.json();
+                    const vmSummary = vmData.summary || {};
+                    const region = vmData.region_checked || 'Unknown';
+                    
+                    const vmStats = `${vmSummary.total_vm_skus || 0} unique SKUs, ${vmSummary.available_in_region || 0} available in ${region}`;
+                    document.getElementById('vm-stats').textContent = vmStats;
+                }
+            } catch (error) {
+                console.log('Statistics loading failed:', error);
+                document.getElementById('providers-stats').textContent = 'Click to explore resource providers';
+                document.getElementById('vm-stats').textContent = 'Click to explore VM SKUs';
+                document.getElementById('target-region').textContent = 'Configure in scripts';
+                document.getElementById('last-updated').textContent = 'Run data collection script';
+            }
+        }
+        
+        // Set active navigation item
+        document.addEventListener('DOMContentLoaded', function() {
+            loadStatistics();
+            
+            const currentPage = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                const href = link.getAttribute('href');
+                if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

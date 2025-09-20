@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - Azure Resources Dashboard</title>
+    <link rel="stylesheet" href="azure_unified_styles.css">
+    <style>
+        .error-container {
+            text-align: center;
+            max-width: 600px;
+            margin: 60px auto;
+            padding: 40px 20px;
+        }
+        
+        .error-code {
+            font-size: 8rem;
+            font-weight: 700;
+            color: #0078d4;
+            line-height: 1;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 120, 212, 0.1);
+        }
+        
+        .error-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #323130;
+            margin-bottom: 16px;
+        }
+        
+        .error-message {
+            font-size: 1.1rem;
+            color: #605e5c;
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+        
+        .error-actions {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        
+        .action-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+        
+        .action-btn.primary {
+            background-color: #0078d4;
+            color: #ffffff;
+        }
+        
+        .action-btn.primary:hover {
+            background-color: #106ebe;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0, 120, 212, 0.3);
+        }
+        
+        .action-btn.secondary {
+            background-color: #ffffff;
+            color: #0078d4;
+            border: 1px solid #0078d4;
+        }
+        
+        .action-btn.secondary:hover {
+            background-color: #f3f2f1;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .suggestions {
+            background-color: #f8f9fa;
+            border: 1px solid #e1e1e1;
+            border-radius: 8px;
+            padding: 24px;
+            margin-top: 32px;
+            text-align: left;
+        }
+        
+        .suggestions h3 {
+            color: #323130;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .suggestions ul {
+            margin: 0;
+            padding-left: 20px;
+            list-style-type: disc;
+        }
+        
+        .suggestions li {
+            margin: 8px 0;
+            color: #605e5c;
+            line-height: 1.5;
+        }
+        
+        .suggestions a {
+            color: #0078d4;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .suggestions a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 6rem;
+            }
+            
+            .error-title {
+                font-size: 1.5rem;
+            }
+            
+            .error-message {
+                font-size: 1rem;
+            }
+            
+            .error-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .action-btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Menu -->
+        <nav class="main-nav">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <a href="index.html" class="nav-brand-link">
+                        <span class="nav-brand-text">Azure Resources Dashboard</span>
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link" data-page="home">
+                            <span class="nav-icon">🏠</span>
+                            <span class="nav-text">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="azure_resource_providers.html" class="nav-link" data-page="providers">
+                            <span class="nav-icon">🏢</span>
+                            <span class="nav-text">Resource Providers</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="azure_vm_skus.html" class="nav-link" data-page="vms">
+                            <span class="nav-icon">🖥️</span>
+                            <span class="nav-text">VM SKUs</span>
+                        </a>
+                    </li>
+                    <!-- Future pages can be added here -->
+                    <!--
+                    <li class="nav-item">
+                        <a href="azure_storage.html" class="nav-link" data-page="storage">
+                            <span class="nav-icon">💾</span>
+                            <span class="nav-text">Storage</span>
+                        </a>
+                    </li>
+                    -->
+                </ul>
+            </div>
+        </nav>
+
+        <script>
+        // Set active navigation item based on current page
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                const href = link.getAttribute('href');
+                if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        </script>
+    
+    <div class="container">
+        <div class="error-container">
+            <div class="error-code">404</div>
+            <h1 class="error-title">Page Not Found</h1>
+            <p class="error-message">
+                Sorry, the page you're looking for doesn't exist or has been moved. 
+                The Azure Resources Dashboard is here to help you explore Azure services and VM SKUs.
+            </p>
+            
+            <div class="error-actions">
+                <a href="index.html" class="action-btn primary">
+                    <span>🏠</span>
+                    Return to Home
+                </a>
+                <a href="javascript:history.back()" class="action-btn secondary">
+                    <span>←</span>
+                    Go Back
+                </a>
+            </div>
+            
+            <div class="suggestions">
+                <h3>
+                    <span>💡</span>
+                    Popular Pages
+                </h3>
+                <ul>
+                    <li><a href="index.html">Dashboard Home</a> - Overview of Azure resources and statistics</li>
+                    <li><a href="azure_resource_providers.html">Resource Providers</a> - Explore Azure resource providers available in Belgium Central</li>
+                    <li><a href="azure_vm_skus.html">VM SKUs</a> - Browse virtual machine sizes and availability</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer">
+            Generated by Azure Resource Dashboard | Microsoft Learn Style
+        </div>
+    </div>
+
+    <script>
+        // Add some interactive behavior
+        document.addEventListener('DOMContentLoaded', function() {
+            // Auto-redirect after 30 seconds if no interaction
+            let redirectTimeout = setTimeout(function() {
+                window.location.href = 'index.html';
+            }, 30000);
+            
+            // Cancel auto-redirect if user interacts with the page
+            document.addEventListener('click', function() {
+                clearTimeout(redirectTimeout);
+            });
+            
+            document.addEventListener('keydown', function() {
+                clearTimeout(redirectTimeout);
+            });
+            
+            // Add keyboard shortcut for home
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'h' || e.key === 'H') {
+                    window.location.href = 'index.html';
+                }
+                if (e.key === 'Escape') {
+                    history.back();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

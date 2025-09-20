@@ -1,0 +1,33 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "deployName": {
+            "value": "regincheck"
+        },
+        "prefix": {
+            "value": "rgc"
+        },
+        "checklocation": {
+            "value": "belgiumcentral"
+        },
+        "deploymentLocation": {
+            "value": "swedencentral"
+        },
+        "RGName": {
+            "value": "regionchecker-rg"
+        },
+        "storageAccountName": {
+            "value": "regionchecker7850987sa"
+        },
+        "functionAppName": {
+            "value": "regionchecker785098-fa7"
+        },
+        "appServicePlanName": {
+            "value": "regionchecker7850987-plan"
+        },
+        "managedidentityName": {
+            "value": "regionchecker7850987-id"
+        }
+    }
+}
