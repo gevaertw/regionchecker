@@ -1,7 +1,7 @@
 {
   "generated": {
-    "timestamp": "20250920_133831",
-    "date_time": "2025-09-20 13:38:31",
+    "timestamp": "20250920_151733",
+    "date_time": "2025-09-20 15:17:33",
     "subscription_id": "d8c72049-9d9e-4aad-b01c-0b161e191ad1"
   },
   "region_checked": "Belgium Central",
@@ -6679,7 +6679,11 @@
             "New Zealand North",
             "Southeast Asia",
             "Japan West",
-            "West Central US"
+            "West Central US",
+            "Jio India Central",
+            "Chile Central",
+            "Austria East",
+            "West US 3"
           ],
           "available_in_region": false
         },
@@ -6730,7 +6734,11 @@
             "New Zealand North",
             "Southeast Asia",
             "Japan West",
-            "West Central US"
+            "West Central US",
+            "Jio India Central",
+            "Chile Central",
+            "Austria East",
+            "West US 3"
           ],
           "available_in_region": false
         },
@@ -6746,7 +6754,8 @@
             "Central US",
             "Australia East",
             "West US",
-            "South Central US"
+            "South Central US",
+            "Canada Central"
           ],
           "available_in_region": false
         },
@@ -6762,7 +6771,8 @@
             "Central US",
             "Australia East",
             "West US",
-            "South Central US"
+            "South Central US",
+            "Canada Central"
           ],
           "available_in_region": false
         },
@@ -6773,6 +6783,67 @@
         },
         {
           "resource_type": "locations/networkSecurityPerimeterOperationStatuses",
+          "locations": [
+            "West Central US",
+            "Jio India West",
+            "North Central US",
+            "West US",
+            "West Europe",
+            "UAE Central",
+            "Germany North",
+            "East US",
+            "West India",
+            "East US 2",
+            "Australia Central",
+            "Australia Central 2",
+            "South Africa West",
+            "Brazil South",
+            "UK West",
+            "North Europe",
+            "Central US",
+            "UAE North",
+            "Germany West Central",
+            "Switzerland West",
+            "East Asia",
+            "South Africa North",
+            "UK South",
+            "South India",
+            "Australia Southeast",
+            "West US 2",
+            "Sweden Central",
+            "Japan West",
+            "Norway East",
+            "France Central",
+            "West US 3",
+            "Central India",
+            "Korea South",
+            "Brazil Southeast",
+            "Korea Central",
+            "Southeast Asia",
+            "South Central US",
+            "Norway West",
+            "Australia East",
+            "Japan East",
+            "Canada East",
+            "Canada Central",
+            "Switzerland North",
+            "Qatar Central",
+            "Poland Central",
+            "Italy North",
+            "Israel Central",
+            "Mexico Central",
+            "Spain Central",
+            "Chile Central",
+            "New Zealand North",
+            "Indonesia Central",
+            "Malaysia West",
+            "Austria East",
+            "Belgium Central"
+          ],
+          "available_in_region": true
+        },
+        {
+          "resource_type": "locations/nspServiceTags",
           "locations": [
             "West Central US",
             "Jio India West",
@@ -56501,6 +56572,13 @@
             "global"
           ],
           "available_in_region": false
+        },
+        {
+          "resource_type": "operations",
+          "locations": [
+            "global"
+          ],
+          "available_in_region": false
         }
       ],
       "available_in_region": false
@@ -82190,12 +82268,12 @@
       "registration_state": "NotRegistered",
       "resource_types": [
         {
-          "resource_type": "extendedZones",
+          "resource_type": "operations",
           "locations": [],
           "available_in_region": false
         },
         {
-          "resource_type": "operations",
+          "resource_type": "extendedZones",
           "locations": [],
           "available_in_region": false
         }
@@ -84910,6 +84988,11 @@
         {
           "resource_type": "storageBuckets",
           "locations": [
+            "East US",
+            "Brazil South",
+            "Australia East",
+            "UK South",
+            "West Europe",
             "West Central US"
           ],
           "available_in_region": false
@@ -84917,6 +85000,11 @@
         {
           "resource_type": "computeInstances",
           "locations": [
+            "East US",
+            "Brazil South",
+            "Australia East",
+            "UK South",
+            "West Europe",
             "West Central US"
           ],
           "available_in_region": false
@@ -84924,6 +85012,11 @@
         {
           "resource_type": "cloudFunctions",
           "locations": [
+            "East US",
+            "Brazil South",
+            "Australia East",
+            "UK South",
+            "West Europe",
             "West Central US"
           ],
           "available_in_region": false
@@ -84931,6 +85024,18 @@
         {
           "resource_type": "Locations",
           "locations": [],
+          "available_in_region": false
+        },
+        {
+          "resource_type": "Locations/OperationStatuses",
+          "locations": [
+            "West Central US",
+            "Brazil South",
+            "Australia East",
+            "UK South",
+            "East US",
+            "West Europe"
+          ],
           "available_in_region": false
         }
       ],
@@ -92294,6 +92399,11 @@
         },
         {
           "resource_type": "privateStores/collections/offers",
+          "locations": [],
+          "available_in_region": false
+        },
+        {
+          "resource_type": "privateStores/collections/offers/contextsView",
           "locations": [],
           "available_in_region": false
         },
